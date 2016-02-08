@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amill.cse5911dojo.MainActivity">
+
+    <Button
+        android:id="@+id/playGame"
+        android:text="Play Game"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="chooseGame"/>
+
+    <Button
+        android:id="@+id/viewProfile"
+        android:text="View Profile"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="viewProfile"/>
+
+    <Button
+        android:id="@+id/setReminders"
+        android:text="Set Reminders"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="setReminder"/>
+
+    <Button
+        android:id="@+id/takeSurvey"
+        android:text="Take Daily Survey"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="takeSurvey" />
+
+    <Button
+        android:id="@+id/store"
+        android:text="Ninja Bucks Store"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="openStore"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:text="Log Out"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="logOut"/>
+
+</LinearLayout>

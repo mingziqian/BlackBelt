@@ -1,0 +1,94 @@
+<resources>
+
+    <string name="app_name">Diabetes Dojo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login__screen">Login_Screen</string>
+    <string name="register">Register</string>
+    <string name="title_activity_register">Register</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_reminders">Reminders</string>
+    <string name="title_activity_reminders_list">Reminders List</string>
+    <string name="title_activity_daily_survey">DailySurvey</string>
+    <string name="title_activity_view_profile">ViewProfile</string>
+    <string name="title_activity_loading__screen">Loading_Screen</string>
+
+    <string-array name="questions">
+        <item>How willing are you to check your blood glucose 4 times per day?</item>
+        <item>What is your interest in taking your Bolus at breakfast?</item>
+        <item>What is your interest in taking your Bolus at lunch?</item>
+        <item>What is your interest in taking your Bolus at dinner?</item>
+        <item>What is your interest in taking your Bolus with snacks?</item>
+        <item>How willing are you to checking your Bolus BEFORE meals rather than after?</item>
+        <item>What is your interest in changing the pump infusion site every 2-3 days (rather than 4-5)?</item>
+        <item>How willing are you to carefully count your Carbs today?</item>
+        <item>How do you feel about purposefully exercising at least 5 times per week?</item>
+        <item>How do you feel about doing extra physical activity throughout your day (EX: Taking stairs not elevator, or walking your pet)?</item>
+        <item>How do you feel about eating 5 or more servings of fruits and vegetables daily?</item>
+        <item>How do you feel about drinking at least 8 glasses of water daily?</item>
+    </string-array>
+
+    <string name="details_alarm_name">Alarm Name</string>
+    <string name="details_repeat_weekly">Repeat Weekly</string>
+    <string name="details_sunday">Sunday</string>
+    <string name="details_monday">Monday</string>
+    <string name="details_tuesday">Tuesday</string>
+    <string name="details_wednesday">Wednesday</string>
+    <string name="details_thursday">Thursday</string>
+    <string name="details_friday">Friday</string>
+    <string name="details_saturday">Saturday</string>
+    <string name="details_alarm_tone">Alarm Tone</string>
+    <string name="details_alarm_tone_default">Select an alarm tone</string>
+    
+    <string name="title_activity_bubble_font">BubbleFont</string>
+    <string name="title_activity_game_view">GameView</string>
+
+
+    <string name="menu_new_game">New Game</string>
+    <string name="menu_colorblind_mode_on">Colorblind Mode On</string>
+    <string name="menu_colorblind_mode_off">Colorblind Mode Off</string>
+    <string name="menu_fullscreen_on">Fullscreen On</string>
+    <string name="menu_fullscreen_off">Fullscreen Off</string>
+    <string name="menu_sound_on">Sound On</string>
+    <string name="menu_sound_off">Sound Off</string>
+    <string name="menu_about">About Frozen Bubble</string>
+    <string name="menu_dont_rush_me">Don\'t Rush Me</string>
+    <string name="menu_rush_me">Rush Me</string>
+    <string name="menu_editor">Level Editor</string>
+    <string name="install_editor">Redirecting you to the Market to download the Frozen Bubble Level Editor...</string>
+    <string name="market_missing">Cannot find Android Market! Please install Frozen Bubble Level Editor manually.</string>
+    <string name="title_activity_choose_game">ChooseGame</string>
+    <string name="title_activity_choose__game">Choose_Game</string>
+    <string name="title_activity_frozen_bubble">FrozenBubble</string>
+    <string name="title_activity_tiltmazes">TiltmazesActivity</string>
+    <string name="title_activity_select_maze_view">SelectMazeView</string>
+
+    <string name="menu_restart">Restart</string>
+    <string name="menu_map_prev">Previous</string>
+    <string name="menu_map_next">Next</string>
+    <string name="menu_select_maze">Select maze</string>
+    <string name="menu_sensor">Sensor</string>
+    <string name="menu_about_maze">About</string>
+
+    <string name="select_maze_title">TiltMazes - Select maze</string>
+
+<string name="about_text"><b>TiltMazes - A logical puzzle game</b>\n
+<i>Copyright © 2009, Balázs Lécz</i>\n
+\n
+A ball sits in a flat tray containing one or more squares (goals). The challenge is
+to guide the ball around the tray and collect all the squares.
+Tilt the phone to start the ball rolling.\n
+The ball rolls in a straight line until it hits a wall, you can then tilt again.\n
+\n
+Based on the 2D tilt-maze collection at http://www.clickmazes.com\n
+Maze designs used with permission.\n
+Maze concepts and designs © Andrea Gilbert &lt;andrea@clickmazes.com>.\n
+See the source code at http://code.google.com/p/tiltmazes
+</string>
+
+    <string name="maze_label">Maze:</string>
+
+
+</resources>

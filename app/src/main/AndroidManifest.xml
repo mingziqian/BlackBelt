@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.amill.cse5911dojo" >
+
+    <uses-permission android:name="android.permission.access_network_state" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE">
+    </uses-permission>
+
+    <application
+        android:largeHeap="true"
+        android:name=".Parse_Initialize"
+        android:allowBackup="true"
+        android:icon="@drawable/black_uniform"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat" >
+        <activity
+            android:name=".Loading_Screen"
+            android:label="Black Belt" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login_Screen"
+            android:label="Login Screen" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Diabetes Dojo" >
+        </activity>
+        <activity
+            android:name=".Register"
+            android:label="@string/register" >
+        </activity>
+
+        <!-- todo -->
+        <activity
+            android:name=".AlarmListActivity"
+            android:label="@string/title_activity_reminders_list" >
+        </activity>
+        <activity android:name=".AlarmScreen" />
+
+        <service
+            android:name=".AlarmService"
+            android:enabled="true" />
+
+        <receiver android:name=".AlarmManagerHelper" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!-- todo -->
+
+        <activity
+            android:name=".Reminders"
+            android:label="@string/title_activity_reminders" >
+        </activity>
+        <activity
+            android:name=".DailySurvey"
+            android:label="@string/title_activity_daily_survey"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.amill.cse5911dojo.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ViewProfile"
+            android:label="@string/title_activity_view_profile" >
+        </activity>
+        <activity
+            android:name=".ViewLeaderboard"
+            android:label="ViewLeaderboard" >
+        </activity>
+        <receiver android:name=".AlarmManagerHelper" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".AlarmService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".Choose_Game"
+            android:label="@string/title_activity_choose__game" >
+        </activity>
+        <activity
+            android:name=".FrozenBubble"
+            android:label="@string/title_activity_frozen_bubble" >
+        </activity>
+        <activity
+            android:name=".StoreScreen"
+            android:label="StoreScreen">
+        </activity>
+        <activity
+            android:name=".StoreItemScreen"
+            android:label="StoreItemScreen">
+        </activity>
+        <activity
+            android:name=".TiltMazesActivity"
+            android:label="TiltMaze">
+        </activity>
+        <activity
+            android:name=".SelectMazeActivity"
+            android:label="SelectMaze">
+        </activity>
+    </application>
+
+</manifest>
