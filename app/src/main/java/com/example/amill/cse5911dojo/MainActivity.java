@@ -24,19 +24,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void chooseGame(View view){
+    public void chooseGame(View view) {
         Intent intent = new Intent(this, Choose_Game.class);
         startActivity(intent);
     }
 
-    public void takeSurvey(View view)
-    {
+    public void takeSurvey(View view) {
         Intent intent = new Intent(this, DailySurvey.class);
         startActivity(intent);
     }
-    public void viewProfile(View view)
-    {
+
+    public void viewProfile(View view) {
         Intent intent = new Intent(this, ViewProfile.class);
+        startActivity(intent);
+    }
+
+    public void viewLeaderboard(View view)
+    {
+        Intent intent = new Intent(this, ViewLeaderboard.class);
         startActivity(intent);
     }
     public void setReminder(View view){

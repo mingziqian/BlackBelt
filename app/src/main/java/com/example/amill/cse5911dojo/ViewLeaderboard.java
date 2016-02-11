@@ -18,21 +18,23 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Queue;
 
 /**
  * Created by Mingziqian on 16/2/6.
  */
 public class ViewLeaderboard extends AppCompatActivity{
 
-    private boolean test = false;
+    private boolean test;
     private ParseException x;
     private ParseUser currentUser;
     private String user;
     private String current_belt;
     private String total_plays;
-    private String current_uniform;
     private String obj_id;
     private ParseObject gameStat;
     private User_LocalDB user_db;
@@ -41,104 +43,36 @@ public class ViewLeaderboard extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        currentUser = ParseUser.getCurrentUser();
-        if (currentUser != null) {
-            obj_id=currentUser.getObjectId();
-        }
-        user_db=new User_LocalDB(this);
-
-        ParseQuery<ParseObject> query1 = ParseQuery.getQuery("GameStats");
-        query1.whereEqualTo("user",ParseUser.getCurrentUser());
-        query1.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> object, ParseException e) {
-                if (object != null) {
-                    // object will be your game score
-                    gameStat = object.get(0);
-                    test = true;
-                    Context context = getApplicationContext();
-                    CharSequence text = "SUCCESS";
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-
-                    if (gameStat.getString("glucose_belt") != null) {
-                        current_belt = gameStat.getString("glucose_belt").toString();
-
-                    } else if (gameStat.getString("bolus_belt") != null) {
-                        current_belt = gameStat.getString("bolus_belt").toString();
-
-                    }
-                    total_plays = gameStat.getNumber("total_plays").toString();
-
-                    showInfo();
-                    storeResults();
-
-                } else {
-                    // something went wrong
-                    Log.d("gamestats", "Error: " + e.getMessage());
-                    Context context = getApplicationContext();
-                    CharSequence text = "FAILED";
-                    int duration = Toast.LENGTH_LONG;
-                    x = e;
-                    test = true;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-            }
-
-
-        });
-
-
-    }
-
-    private void showInfo()
-    {
         setContentView(R.layout.activity_view_leaderboard);
 
-        TextView label = (TextView) findViewById(R.id.lbl_name);
-        label.setText(ParseUser.getCurrentUser().getUsername().toString());
+        //find the listView in the XML of leaderboard's page, act as a container of listItems.
+        ListView list = (ListView) findViewById(R.id.leaderboard_listView);
 
-        TextView lblcurrent_belt = (TextView) findViewById(R.id.lbl_current_belt);
-        lblcurrent_belt.setText(current_belt);
+        //create an arraylist for listItems.
+        ArrayList<HashMap<String, String>> mylist = new ArrayList<>();
 
-        TextView lbltotal_plays = (TextView) findViewById(R.id.lbl_tot_plays);
-        lbltotal_plays.setText(total_plays);
-
-        ImageView img = (ImageView) findViewById(R.id.belt_image);
-        int imgID = getResources().getIdentifier(current_uniform,"drawable",getPackageName());
-        img.setImageResource(imgID);
-
-
-    }
-    private void storeResults()
-    {
-        current_belt = user_db.getBolus_Belt(current_belt).toString();
-        total_plays = user_db.getTotal_plays(total_plays).toString();
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_view_profile, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        String[] names = {"David", "Andrew", "Austin", "Karl", "Mike", "Dean", "Sam", "Jess"};
+        String[] belts = {"Black", "Brown", "Blue", "Green", "Orange", "Orange", "Yellow", "White"};
+        String[] uniforms = {"black_uniform", "black_uniform", "blue_outfit", "green_outfit", "orange_outfit", "orange_outfit", "yellow_outfit", "white_outfit"};
+        for(int i=0;i<8;i++)
+        {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("leaderboard_name", "No."+Integer.toString(i+1)+"    "+names[i]);
+            map.put("leaderboard_belt", "Belt Level: "+belts[i]);
+            map.put("leaderboard_tot_plays","Total Plays: "+Integer.toString(100-10*i));
+            mylist.add(map);
         }
 
-        return super.onOptionsItemSelected(item);
+        //generate adapter for listView
+        SimpleAdapter mSchedule = new SimpleAdapter(this,
+                mylist, //date source
+                R.layout.leaderboard_list_item,   //XML implementation of listItem
+                //dynamic array with listItems' items
+                new String[] {"leaderboard_name", "leaderboard_belt", "leaderboard_tot_plays"},
+                //TextView id in listView
+                new int[] {R.id.leaderboard_name,R.id.leaderboard_belt,R.id.leaderboard_tot_plays});
+        //display
+        list.setAdapter(mSchedule);
     }
+
 }
